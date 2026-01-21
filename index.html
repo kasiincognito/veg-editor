@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Veg editor</title>
+</head>
+<body>
+<div>
+<h1>Enter map configuration</h1>
+<input type="text" placeholder="width" id="width">
+<input type="text" placeholder="height" id="height">
+
+</div>
+<div id="pointer">
+<img id="grass" src="assets/blank.png" onclick="point = 0">
+<img id="grass" src="assets/grass.jpg" onclick="point = 1">
+<img id="leaf" src="assets/leaf.jpg" onclick="point = 5">
+<img id="wood" src="assets/wood.jpg" onclick="point = 4">
+<img id="stone" src="assets/stone.jpg" onclick="point = 2">
+<img id="water" src="assets/water.jpg" onclick="point = 3">
+
+</div>
+</body>
+<style>
+body{
+margin:0;
+overflow:hidden;
+background-color:#555555;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+div{
+position:absolute;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+}
+img{
+position:relative;
+height:60px;
+width:60px;
+}
+#pointer{
+left:0;
+width:200px;
+height:100%;
+background-color:#333333;
+}
+</style>
+<script src="scripts/collision.js"></script>
+<script src="scripts/script.js"></script>
+</html>
