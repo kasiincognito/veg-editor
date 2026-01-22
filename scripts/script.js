@@ -8,6 +8,8 @@ c.width = window.innerWidth
 c.height = window.innerHeight
 document.body.appendChild(c)
 
+var seed = document.getElementById("seed")
+var limit = document.getElementById("limit")
 var ax = c.width / 2
 var ay = c.height / 2
 var ewidth
@@ -31,6 +33,9 @@ wood.src = "assets/wood.jpg"
 leaf.src = "assets/leaf.jpg"
 
 
+
+
+
 document.addEventListener("keydown", function(e){
     if(e.key === "Enter"){
 	document.querySelector("div").style.display = "none"
@@ -40,6 +45,7 @@ document.addEventListener("keydown", function(e){
 	for(var i = 0; i < eheight * ewidth; i++){
 	    projection.push(0)
 	}
+	limit.value = ewidth
 
 	base.init()
 
@@ -150,9 +156,10 @@ function loop(){
     base.init()
     ay += base.vy
     ax += base.vx
+    seed.value = projection
     
     for(var i = 0; i < map.length; i++){
-	checkCollision(mouse, map[i], "player", i)
+	checkCollision(mouse, map[i], "player", i) 
     }
 }
 
